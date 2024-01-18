@@ -8,18 +8,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      container:{
+        center: true,
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      screens:{
-        sm : '576px',
-        md : '768',
-        lg : '992',
-        xl : '1200px',
-        '2xl' : '1400px'
-      },
+      // screens:{
+      //   sm : '576px',
+      //   md : '768',
+      //   lg : '992',
+      //   xl : '1200px',
+      //   '2xl' : '1400px'
+      // },
     },
   },
   plugins: [],

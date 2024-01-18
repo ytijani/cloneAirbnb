@@ -1,21 +1,24 @@
 import Link from "next/link";
 import Airbnb from '../assets/airbnb.svg'
 import Image from "next/image";
+import SearchBar from "./SearchBar";
 
 
 const Header = () => {
     return (
-        <header className="sticky bg-white top-0 z-50 shadow-md py-2">
-            <div className="w-[95%] mx-auto">
-                <Link href="/" className="relative flex items-center h-[100px] w-[150px] my-auto">
+        <header className="sticky bg-white top-0 z-50 shadow-md">
+            <div className="container  flex justify-between items-center ">
+                <Link href="/" className="relative flex items-center  my-auto">
                     <Image
                         src={Airbnb}
                         alt="Logo"
-                        fill
                         className="objcet-contain object-left"
                     />
                 </Link>
-
+                <SearchBar/>
+                <div>
+                    lololololo
+                </div>
             </div>
         </header>
     )
