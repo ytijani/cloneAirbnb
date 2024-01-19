@@ -11,12 +11,18 @@
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "heroicons": "^2.1.1",
+    "leaflet": "^1.9.4",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.0.1"
+    "react-icons": "^5.0.1",
+    "react-leaflet": "^4.2.1",
+    "react-select": "^5.8.0",
+    "reactjs-popup": "^2.0.6",
+    "world-countries": "^5.0.0"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.8",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
