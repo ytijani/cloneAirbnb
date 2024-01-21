@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
+    "@types/react-date-range": "^1.4.9",
     "heroicons": "^2.1.1",
     "leaflet": "^1.9.4",
     "next": "14.0.4",
     "react": "^18",
+    "react-date-range": "^2.0.0-alpha.4",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
     "react-leaflet": "^4.2.1",
