@@ -9,3 +9,7 @@
 .leaflet-top{
     z-index: 0 !important;
 }
+
+.hide::-webkit-scrollbar{
+    display: none;
+}

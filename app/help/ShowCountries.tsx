@@ -1,15 +1,17 @@
-
+'use client'
 
 import SelectCountry, { CountrySelectValue } from '../components/SelectCountry';
 import Map from '../components/Map';
 import { useState } from 'react';
+import { useStore } from '../src/store';
+import { Steps } from '../components/SearchBar';
 
 const ShowCountries = (props: any) => {
 
     const [location, setLocation] = useState<CountrySelectValue>();
-
     const handleCountrySelect = (selectedCountry: CountrySelectValue) => {
         setLocation(selectedCountry);
+        useStore.setState({country : selectedCountry.label})
     };
     return (
         <div className='h-[65vh]'>
@@ -24,7 +26,7 @@ const ShowCountries = (props: any) => {
                 </div>
                 <SelectCountry onChange={handleCountrySelect} />
                 <Map center={location ? location.latlng : undefined} />
-                <button className='bg-[#ff385c] py-[10px] text-white rounded-xl hover:shadow-md'>NEXT</button>
+                <button className='bg-[#ff385c] py-[10px] text-white rounded-xl hover:shadow-md' onClick={() => props.setStep(Steps.Date)}>NEXT</button>
             </div>
         </div>
     )

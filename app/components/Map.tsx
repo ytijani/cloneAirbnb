@@ -7,6 +7,7 @@ import 'leaflet/dist/leaflet.css'
 import markerIcon from 'leaflet/dist/images/marker-icon.png'
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
 import markerShadow from 'leaflet/dist/images/marker-shadow.png'
+import { useEffect } from 'react';
 
 //@ts-ignore
 delete L.Icon.Default.prototype._getIconUrl;
@@ -22,12 +23,13 @@ interface MapProps {
 }
 const Map: React.FC<MapProps> = ({ center }) => {
 
+   
 
     return (
         <MapContainer
             center={center as L.LatLngExpression || [51, -0.09]}
-            zoom={center ? 4 : 2}
-            scrollWheelZoom={false}
+            zoom={center ? 13 : 2}
+            scrollWheelZoom={true}
             className='h-[35vh] rounded-lg'
         >
             <TileLayer

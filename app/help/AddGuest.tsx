@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { useState } from "react"
+import { Steps } from "../components/SearchBar";
 
 
 const AddGuest = (props: any) => {
@@ -60,8 +62,8 @@ const AddGuest = (props: any) => {
                     </div>
                 </div>
                 <div className='flex w-[100%] items-center jusstify-center gap-[1em]'>
-                    <button className='border-[1px] py-[10px] font-semibold rounded-lg hover:shadow-md w-[49%]'>Back</button>
-                    <button className='bg-[#ff385c] py-[10px] text-white rounded-lg hover:shadow-md w-[49%]'>Search</button>
+                    <button className='border-[1px] py-[10px] font-semibold rounded-lg hover:shadow-md w-[49%]' onClick={() => props.setStep(Steps.Date)}>Back</button>
+                    <Link onClick={props.close} href="/search" className='bg-[#ff385c] py-[10px] text-white rounded-lg hover:shadow-md w-[49%] text-center'>Search</Link>
                 </div>
             </div>
         </div>

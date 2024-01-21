@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const CategoryList = ({ exploreData }: any) => {
     return (
-        <div className="grid grid-cols-4 container mt-[2em] gap-[1.2em] overflow-auto h-[80vh]">
+        <div className="grid grid-cols-4 container mt-[2em] gap-[1.2em] overflow-auto h-[80vh] hide ">
             {exploreData.map((item: any) => {
                 const { picture, location, Country, country, distance } = item;
                 return (
-                    <div key={location} className="flex flex-col">
+                    <div key={location} className="flex flex-col cursor-pointer">
                         <Image
                             className="rounded-xl h-[16em]  cover"
                             src={picture}

@@ -35,7 +35,7 @@ const SelectCountry: React.FC<CountrySelectProps> = ({ value, onChange }) => {
                             <span className="text-neutral-600  ml-[5px]">{option.region}</span>
                         </div>
                     </div>
-                )}
+                  )}
                 classNames={{
                     control: () => 'p-1 border-2',
                     input: () => 'text-lg',
@@ -50,7 +50,6 @@ const SelectCountry: React.FC<CountrySelectProps> = ({ value, onChange }) => {
                         primary25: '#ffe4e6'
                     }
                 }
-
                 )}
             />
         </div>

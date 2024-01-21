@@ -11,7 +11,6 @@ export default async function Home() {
     <main>
       <Category />
       <CategoryList exploreData={exploreData}/>
-      <Footer/>
     </main>
   )
 }

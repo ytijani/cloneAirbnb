@@ -1,8 +1,12 @@
 
+'use client';
+
 import { useState } from 'react';
 import { DateRange, DateRangePicker, RangeKeyDict } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; 
 import 'react-date-range/dist/theme/default.css'; 
+import { Steps } from '../components/SearchBar';
+import { useStore } from '../src/store';
 
 const ShowDate = (props: any) => {
     const [startDate, setStartDate] = useState(new Date());
@@ -16,6 +20,7 @@ const ShowDate = (props: any) => {
     const handleSelect = (ranges: RangeKeyDict) => {
         setStartDate(ranges.selection.startDate as Date);
         setEndDate(ranges.selection.endDate as Date);
+        useStore.setState({startDate, endDate});
     };
 
     return (
@@ -33,8 +38,8 @@ const ShowDate = (props: any) => {
                     minDate={new Date()}
                 />
                 <div className='flex w-[100%] items-center jusstify-center gap-[1em]'>
-                    <button className='border-[1px] py-[10px] font-semibold rounded-lg hover:shadow-md w-[49%]'>Back</button>
-                    <button className='bg-[#ff385c] py-[10px] text-white rounded-lg hover:shadow-md w-[49%]'>NEXT</button>
+                    <button className='border-[1px] py-[10px] font-semibold rounded-lg hover:shadow-md w-[49%]' onClick={() => props.setStep(Steps.Where)}>Back</button>
+                    <button className='bg-[#ff385c] py-[10px] text-white rounded-lg hover:shadow-md w-[49%]' onClick={() => props.setStep(Steps.AddGuest)}>NEXT</button>
 
                 </div>
             </div>
