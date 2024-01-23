@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
+    "@types/google-map-react": "^2.1.10",
     "@types/react-date-range": "^1.4.9",
+    "google-map-react": "^2.2.1",
     "heroicons": "^2.1.1",
     "leaflet": "^1.9.4",
     "mapbox-gl": "^3.1.0",

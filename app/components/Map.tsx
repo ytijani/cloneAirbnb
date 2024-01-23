@@ -19,21 +19,21 @@ L.Icon.Default.mergeOptions({
 
 export interface MapProps {
     center?: number[];
-    height? : string;
+    height?: string;
 }
-const Map: React.FC<MapProps> = ({ center , height}) => {
+const Map: React.FC<MapProps> = ({ center, height }) => {
 
     return (
         <MapContainer
-            center={center as L.LatLngExpression  || [51, -0.09]}
-            zoom={center ? 10 : 2}
-            scrollWheelZoom={true}
+            center={center as L.LatLngExpression || [51, -0.09]}
+            zoom={center ? 13 : 2}
+            scrollWheelZoom={false}
             className={`h-[${height}vh] rounded-lg`}
         >
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-           {center && <Marker position={center as L.LatLngExpression}></Marker>}
+            {center && <Marker position={center as L.LatLngExpression}></Marker>}
         </MapContainer>
     )
 }
