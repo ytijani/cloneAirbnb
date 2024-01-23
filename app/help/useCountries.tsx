@@ -1,3 +1,4 @@
+'use cleint';
 import countries from "world-countries";
 
 
@@ -7,8 +8,9 @@ const formattedCountrie = countries.map((country : any) => ({
     flag : country.flag,
     latlng : country.latlng,
     region : country.region
-}))
+} ))
 
+console.log("countries : ", countries);
 const useCountries = () =>{
     const getAll = () => formattedCountrie;
 

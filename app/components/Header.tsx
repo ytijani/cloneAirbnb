@@ -1,3 +1,5 @@
+'use client'
+
 import Link from "next/link";
 import Airbnb from '../assets/airbnb.svg'
 import Image from "next/image";

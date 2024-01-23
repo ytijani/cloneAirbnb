@@ -1,7 +1,13 @@
+'use client'
+
 import { FaStar } from "react-icons/fa"; // I used FaStar for illustration, replace it with your LiaStarSolid
 import Image from "next/image";
+import { useStore } from "../src/store";
 
 const CategoryList = ({ exploreData }: any) => {
+    console.log("my expolor data : ", exploreData);
+
+    useStore.setState({userData : exploreData});
     return (
         <div className="grid grid-cols-4 container mt-[2em] gap-[1.2em] overflow-auto h-[80vh] hide ">
             {exploreData.map((item: any) => {

@@ -17,7 +17,6 @@ export enum Steps {
 const SearchBar = () => {
 
     const [step, setStep] = useState<Steps>(Steps.Where);
-
     const renderStepComponent = (close : any) => {
         switch (step) {
             case Steps.Where:
@@ -27,7 +26,7 @@ const SearchBar = () => {
             case Steps.AddGuest:
                 return <AddGuest close={close} setStep={setStep} />;
             default:
-                return null; // Handle other steps or no step
+                return null;
         }
     };
 

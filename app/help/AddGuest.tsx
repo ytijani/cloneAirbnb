@@ -9,6 +9,8 @@ const AddGuest = (props: any) => {
     const [children, setChildren] = useState(0);
     const [infants, setInfants] = useState(0);
     const [pets, setPets] = useState(0);
+
+
     return (
         <div className="">
             <button onClick={props.close} className=' bg-[#ff385c] rounded-full w-[20px] h-[20px] text-[15px] text-white flex justify-center items-center '>
@@ -63,7 +65,7 @@ const AddGuest = (props: any) => {
                 </div>
                 <div className='flex w-[100%] items-center jusstify-center gap-[1em]'>
                     <button className='border-[1px] py-[10px] font-semibold rounded-lg hover:shadow-md w-[49%]' onClick={() => props.setStep(Steps.Date)}>Back</button>
-                    <Link onClick={props.close} href="/search" className='bg-[#ff385c] py-[10px] text-white rounded-lg hover:shadow-md w-[49%] text-center'>Search</Link>
+                    <Link onClick={props.close} href="/search" className='bg-[#ff385c] py-[10px] text-white rounded-lg hover:shadow-md w-[49%] text-center'  >Search</Link>
                 </div>
             </div>
         </div>

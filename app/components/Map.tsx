@@ -7,7 +7,6 @@ import 'leaflet/dist/leaflet.css'
 import markerIcon from 'leaflet/dist/images/marker-icon.png'
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
 import markerShadow from 'leaflet/dist/images/marker-shadow.png'
-import { useEffect } from 'react';
 
 //@ts-ignore
 delete L.Icon.Default.prototype._getIconUrl;
@@ -18,19 +17,18 @@ L.Icon.Default.mergeOptions({
 
 });
 
-interface MapProps {
+export interface MapProps {
     center?: number[];
+    height? : string;
 }
-const Map: React.FC<MapProps> = ({ center }) => {
-
-   
+const Map: React.FC<MapProps> = ({ center , height}) => {
 
     return (
         <MapContainer
-            center={center as L.LatLngExpression || [51, -0.09]}
-            zoom={center ? 13 : 2}
+            center={center as L.LatLngExpression  || [51, -0.09]}
+            zoom={center ? 10 : 2}
             scrollWheelZoom={true}
-            className='h-[35vh] rounded-lg'
+            className={`h-[${height}vh] rounded-lg`}
         >
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
