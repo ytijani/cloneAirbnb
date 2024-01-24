@@ -1,6 +1,12 @@
 import {create} from 'zustand'
-import { CategoryListProps } from '../utils/api';
 
+export interface CategoryListProps{
+    picture : string,
+    location : string,
+    Country : string,
+    category : string,
+    distance : string,
+}
 
 export const useStore = create<{
     country : string,

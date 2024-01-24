@@ -4,7 +4,7 @@ import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
-const inter = Poppins({
+const poppins = Poppins({
   weight: ['300','400','600','700'],
   style : ['normal','italic'],
   subsets : ['latin']
@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <Header/>
         {children}
         <Footer/>

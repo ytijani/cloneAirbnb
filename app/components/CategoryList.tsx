@@ -1,25 +1,37 @@
 'use client'
 
-import { FaStar } from "react-icons/fa"; // I used FaStar for illustration, replace it with your LiaStarSolid
+import { FaStar } from "react-icons/fa";
 import Image from "next/image";
-import { useStore } from "../src/store";
+import Link from "next/link";
+
 
 const CategoryList = ({ exploreData }: any) => {
-    console.log("my expolor data : ", exploreData);
 
-    useStore.setState({userData : exploreData});
+   
     return (
         <div className="grid grid-cols-4 container mt-[2em] gap-[1.2em] overflow-auto h-[80vh] hide ">
-            {exploreData.map((item: any) => {
+            {exploreData.length ? exploreData.map((item: any) => {
                 const { picture, location, Country, country, distance } = item;
                 return (
-                    <div key={location} className="flex flex-col cursor-pointer">
+                    <Link
+                         href={{
+                            pathname:"/details",
+                            query: {
+                                picture,
+                                location,
+                                country : Country ? Country : country,
+                                distance,
+                                price : "62$"
+                            }
+                         }}
+                        key={location}
+                        className="flex flex-col cursor-pointer" >
                         <Image
                             className="rounded-xl h-[16em]  cover"
                             src={picture}
-                            alt={location}
-                            width={800} 
-                            height={480} 
+                            alt="picture"
+                            width={800}
+                            height={480}
                         />
                         <div className="mt-[1em] ml-[3px] flex justify-between">
                             <p className="text-[#222222] text-[13px] font-bold">
@@ -34,9 +46,9 @@ const CategoryList = ({ exploreData }: any) => {
                             <span className="font-semibold">62$</span>
                             <span className="font-light">night</span>
                         </div>
-                    </div>
+                    </Link>
                 );
-            })}
+            }) : <h1 className="flex justify-center items-center w-[85vw]">Not Added Yet</h1>}
         </div>
     );
 };
