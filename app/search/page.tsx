@@ -29,7 +29,7 @@ const SearchResult =  () => {
                     return (
                         <div key={location} className="flex flex-col cursor-pointer">
                         <Image
-                            className="rounded-xl h-[16em]  cover "
+                            className="rounded-xl h-[16em]  cover"
                             src={picture}
                             alt={location}
                             width={800} 

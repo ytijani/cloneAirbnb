@@ -28,14 +28,14 @@ const Details = () => {
 
 
     return (
-        <div className="container grid grid-cols-2 mt-[2em]  ">
-            <div className="">
+        <div className="container grid grid-cols-1 gap-[1.5em] lg:grid-cols-2 lg:gap-[0px] mt-[2em] justify-center ">
+            <div className="w-[80%] mx-auto lg:w-[100%] lg:mx-[0]">
                 <div className="ml-[10px] mb-[10px]">
                     <h1 className="font-semibild text-[20px]">{country}-{location}</h1>
                     <p className="font-normal   text-[#aaa]">hosted By name</p>
                 </div>
                 <Image
-                    className="rounded-xl cover h-[60vh]"
+                    className="rounded-xl cover h-[40vh] lg:h-[60vh]"
                     src={picture ? picture : 'picture'}
                     alt="picture"
                     width={800}

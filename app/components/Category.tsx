@@ -88,7 +88,7 @@ const Category = ({ exploreData }: any) => {
 
     return (
         <>
-            <div className="flex justify-between items-center mt-[1em] container">
+            <div className="flex justify-between items-center mt-[1em] container flex-wrap">
                 {categoryData.map((item: Category) => {
                     const { name, image } = item;
                     return (

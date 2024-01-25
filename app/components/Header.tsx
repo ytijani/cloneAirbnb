@@ -20,8 +20,9 @@ const Header = () => {
                         className="objcet-contain object-left"
                     />
                 </Link>
-                <SearchBar />
-
+                <div className="hidden md:block">
+                    <SearchBar />
+                </div>
                 <div className=" flex  items-center gap-[1em]">
                     <div className="hover:bg-gray-200 py-[10px] px-[20px] rounded-full font-medium">
                         Airbnb your home
