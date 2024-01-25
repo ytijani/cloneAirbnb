@@ -2,10 +2,10 @@
 'use client'
 
 import Image from "next/image";
-import useFilter from "../help/useFilter";
 import { useState } from "react";
 import CategoryList from "./CategoryList";
 import { useStore } from "../src/store";
+import UseFilter from "../help/useFilter";
 
 interface Category {
     name: string,
@@ -79,7 +79,7 @@ const Category = ({ exploreData }: any) => {
             if (value === "Trending")
                 setFilteredData(exploreData);
             else {
-                const filteredResults = useFilter({ array: exploreData, value });
+                const filteredResults = UseFilter({ array: exploreData, value });
                 setFilteredData(filteredResults);
 
             }

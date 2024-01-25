@@ -22,7 +22,9 @@ const AddGuest = (props: any) => {
             <Popper  adults={adults} children={children} infants={infants} pets={pets} setAdults={setAdults} setChildren={setChildren} setInfants={setInfants} setPets={setPets}/>
             <div className='flex w-[100%] items-center jusstify-center gap-[1em]'>
                 <button className='border-[1px] py-[10px] font-semibold rounded-lg hover:shadow-md w-[49%]' onClick={() => props.setStep(Steps.Date)}>Back</button>
-                <Link onClick={props.close} href="/search" className='bg-[#ff385c] py-[10px] text-white rounded-lg hover:shadow-md w-[49%] text-center'  >Search</Link>
+                <Link  href="/search" className='bg-[#ff385c] py-[10px] text-white rounded-lg hover:shadow-md w-[49%] text-center'  >
+                    <span onClick={props.close}></span>
+                </Link>
             </div>
         </div>
 

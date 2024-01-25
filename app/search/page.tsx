@@ -50,7 +50,6 @@ const SearchResult =  () => {
                     </div>
                     )
                 })}
-
             </div>
             <div className=''>
                <Map center={location} height="80vh"/>
