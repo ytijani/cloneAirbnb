@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import Image from "next/image";
 import { FaStar } from 'react-icons/fa';
 import Map from '../components/Map';
-import { getData } from '../utils/api';
 
 
 const SearchResult =  () => {
@@ -23,7 +22,7 @@ const SearchResult =  () => {
     }, [])
     return (
         <div className='grid grid-cols-2 container gap-[1em] mt-[1em]'>
-            <div className='grid grid-cols-2 gap-[1.2em] overflow-auto h-[80vh] hide'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-[1.2em] overflow-auto h-[80vh] hide'>
                 {filterData && filterData.map((item: any) => {
                     const { picture, location, Country, country,distance} = item;
                     return (
