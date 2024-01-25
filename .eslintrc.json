@@ -2,8 +2,5 @@
   "extends": "next/core-web-vitals",
   "rules" : {
     "react/no-children-prop": 0
-  },
-  "scripts" : {
-    "lint" : "next lint"
   }
 }
