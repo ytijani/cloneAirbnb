@@ -8,7 +8,6 @@ import { Steps } from '../components/SearchBar';
 
 const ShowCountries = (props: any) => {
 
-    const height = "35";
     const [location, setLocation] = useState<CountrySelectValue>();
     const handleCountrySelect = (selectedCountry: CountrySelectValue) => {
         setLocation(selectedCountry);
