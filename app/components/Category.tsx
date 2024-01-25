@@ -5,6 +5,7 @@ import Image from "next/image";
 import useFilter from "../help/useFilter";
 import { useState } from "react";
 import CategoryList from "./CategoryList";
+import { useStore } from "../src/store";
 
 interface Category {
     name: string,
@@ -71,6 +72,7 @@ const categoryData = [
 const Category = ({ exploreData }: any) => {
     const [filteredData, setFilteredData] = useState<any>(exploreData);
 
+    useStore.setState({userData : exploreData});
     const handleFilter = (value: string) => {
         if (exploreData) {
             console.log("value:",value);

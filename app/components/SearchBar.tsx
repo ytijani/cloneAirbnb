@@ -17,6 +17,11 @@ export enum Steps {
 const SearchBar = () => {
 
     const [step, setStep] = useState<Steps>(Steps.Where);
+
+    const resetStep = () => 
+    {
+        setStep(Steps.Where);
+    }
     const renderStepComponent = (close : any) => {
         switch (step) {
             case Steps.Where:
@@ -34,19 +39,19 @@ const SearchBar = () => {
         <div className='border-[1px] py-2 rounded-[50px] showd-ms hover:shadow-md w-auto px-2 transition cursor-pointer'>
             <div className='flex  justify-between items-center gab-2 '>
                 <div className='text-sm font-semibold px-9'>
-                    <Popup trigger={<button >Where</button>} modal>
+                    <Popup trigger={<button >Where</button>} modal onClose={resetStep}>
                         {//@ts-ignore
                            close => renderStepComponent(close)}
                     </Popup>
                 </div>
                 <div className='border-x-[1px]  text-center font-semibold px-9'>
-                    <Popup trigger={<button >Date</button>} modal>
+                    <Popup trigger={<button >Date</button>} modal onClose={resetStep}>
                         {//@ts-ignore
                             close => renderStepComponent(close)}
                     </Popup>
                 </div>
                 <div className=' flex items-center gap-2 justify-center'>
-                    <Popup trigger={<div className=' ml-[20px] text-center font-semibold  text-gray-600 '>Add guest</div>} modal>
+                    <Popup trigger={<div className=' ml-[20px] text-center font-semibold  text-gray-600 '>Add guest</div>} modal onClose={resetStep}>
                         {//@ts-ignore
                             close =>  renderStepComponent(close)}
                     </Popup>

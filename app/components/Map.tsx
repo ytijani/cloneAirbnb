@@ -22,18 +22,24 @@ export interface MapProps {
     height?: string;
 }
 const Map: React.FC<MapProps> = ({ center, height }) => {
-
+    
+    const mapStyle = {
+        height: height,
+        borderRadius: '8px', 
+    };
+    const defaultCenter: L.LatLngExpression = [51, -0.09];
+    console.log("height : ", height);
     return (
         <MapContainer
-            center={center as L.LatLngExpression || [51, -0.09]}
-            zoom={center ? 13 : 2}
+            center={center && center.length > 0 ? (center as L.LatLngExpression) : defaultCenter}
+            zoom={center ? 6 : 3}
             scrollWheelZoom={false}
-            className={`h-[${height}vh] rounded-lg`}
+            style={mapStyle}
         >
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {center && <Marker position={center as L.LatLngExpression}></Marker>}
+            {center && <Marker position={center && center.length > 0 ? (center as L.LatLngExpression) : defaultCenter}></Marker>}
         </MapContainer>
     )
 }

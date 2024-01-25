@@ -9,7 +9,7 @@ const CategoryList = ({ exploreData }: any) => {
 
    
     return (
-        <div className="grid grid-cols-4 container mt-[2em] gap-[1.2em] overflow-auto h-[80vh] hide ">
+        <div className="grid grid-cols-4 container mt-[2em] gap-[1.2em]  ">
             {exploreData.length ? exploreData.map((item: any) => {
                 const { picture, location, Country, country, distance } = item;
                 return (

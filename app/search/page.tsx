@@ -5,14 +5,16 @@ import { useEffect, useState } from 'react';
 import Image from "next/image";
 import { FaStar } from 'react-icons/fa';
 import Map from '../components/Map';
+import { getData } from '../utils/api';
 
 
-const SearchResult = () => {
+const SearchResult =  () => {
 
     const [filterData, setFilterData] = useState<any>();
-    const userData = useStore.getState().userData || [];
+    const userData = useStore.getState().userData ||  [];
+
     const myCountry = useStore.getState().country || [];
-    const location = useStore.getState().location || []
+    const location = useStore.getState().location || [50,50];
 
     useEffect(() => {
         setFilterData(userData.filter((item: any) => (
@@ -27,7 +29,7 @@ const SearchResult = () => {
                     return (
                         <div key={location} className="flex flex-col cursor-pointer">
                         <Image
-                            className="rounded-xl h-[16em]  cover"
+                            className="rounded-xl h-[16em]  cover "
                             src={picture}
                             alt={location}
                             width={800} 
@@ -52,7 +54,7 @@ const SearchResult = () => {
 
             </div>
             <div className=''>
-               <Map center={location ? location : undefined} height="80"/>
+               <Map center={location} height="80vh"/>
             </div>
         </div>
     )

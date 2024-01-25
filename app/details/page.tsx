@@ -3,16 +3,20 @@
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { FaStar } from "react-icons/fa";
-import 'react-date-range/dist/styles.css'; // main css file
-import 'react-date-range/dist/theme/default.css'; // theme css file
-import { IoIosArrowDown } from "react-icons/io";
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
+
+import { useState } from "react";
+import Buy from "../help/Buy";
 
 
 const Details = () => {
+
+    const [adults, setAdults] = useState(0);
+    const [children, setChildren] = useState(0);
+    const [infants, setInfants] = useState(0);
+    const [pets, setPets] = useState(0);
+
 
     const searchParams = useSearchParams();
     const picture = searchParams.get('picture');
@@ -20,18 +24,38 @@ const Details = () => {
     const location = searchParams.get('location');
     const distance = searchParams.get('distance');
     const price = searchParams.get("price")
+
+
+
     return (
-        <div className="container grid grid-cols-2 mt-[2em]">
+        <div className="container grid grid-cols-2 mt-[2em]  ">
             <div className="">
-                <h1 className="font-semibold text-[25px]">{country}-{location}</h1>
+                <div className="ml-[10px] mb-[10px]">
+                    <h1 className="font-semibild text-[20px]">{country}-{location}</h1>
+                    <p className="font-normal   text-[#aaa]">hosted By name</p>
+                </div>
                 <Image
-                    className="rounded-xl cover"
+                    className="rounded-xl cover h-[60vh]"
                     src={picture ? picture : 'picture'}
                     alt="picture"
                     width={800}
                     height={480}
                 />
                 <p className="font-semibold text-[20px] mt-[0.5em]">Room In {country}-{location}</p>
+                <div className="flex gap-[1em] items-center border-[1px] my-[10px] py-[0.5em] px-[1em] rounded-xl">
+                    <Image
+                        src="https://a0.muscache.com/im/pictures/user/dccf09ab-2500-4f98-8cfd-d81edbeef589.jpg?im_w=240"
+                        width={30}
+                        height={30}
+                        alt="picture"
+                        className="rounded-[50%]"
+                    />
+                    <div className="flex flex-col">
+                        <p className="text-[15px]">Hosted by Reserva Alecrim</p>
+                        <p className="font-normal text-[#818181] text-[10px]">6 years hosting</p>
+                    </div>
+
+                </div>
                 <div className="flex  items-center gap-[10px] text-[#222222]">
                     <div className="flex items-center gap-[3px]">
                         <FaStar size={19} /> <span>2.75</span>
@@ -39,27 +63,13 @@ const Details = () => {
                     <div className="border-b-[1px] border-black p-0 m-0 cursor-pointer">183 reviews</div>
                 </div>
             </div>
-            <div className="w-[90%] border-[1px] mx-auto rounded-xl ">
-                <h1 className="font-semibold text-[40px] w-[70%] mx-auto pt-[1em]">{price} <span className="font-normal text-[26px]">night</span></h1>
-                <div className="w-[70%] mx-auto mt-[2em]">
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DemoContainer components={['DateRangePicker']}>
-                            <DateRangePicker
-                                localeText={{ start: 'Check-in', end: 'Check-out' }}
-                            />
-                        </DemoContainer>
-                    </LocalizationProvider>
-                    <div className="py-[0.7em] border-[1px] border-[#aaa] mt-[1em] rounded-[5px] ">
-                        <div className="w-[90%] mx-auto flex justify-between items-center cursor-pointer">
-                            <p className="text-[14px] font-semibold ">Guests</p>
-                            <IoIosArrowDown className="" />
-                        </div>
-                    </div>
-                    {/* <button className="w-[100%] bg-red-400 col-span-2 mt-[1em] h-[2.5em] rounded-l">Reserve</button> */}
-                </div>
-            </div>
+            <Buy adults={adults} children={children} infants={infants} pets={pets} setAdults={setAdults} setChildren={setChildren} setInfants={setInfants} setPets={setPets} price={price} />
         </div>
     )
 }
+
+
+
+
 
 export default Details;

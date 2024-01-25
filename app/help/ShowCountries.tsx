@@ -8,6 +8,7 @@ import { Steps } from '../components/SearchBar';
 
 const ShowCountries = (props: any) => {
 
+    const height = "35";
     const [location, setLocation] = useState<CountrySelectValue>();
     const handleCountrySelect = (selectedCountry: CountrySelectValue) => {
         setLocation(selectedCountry);
@@ -25,7 +26,7 @@ const ShowCountries = (props: any) => {
                     <span className='text-gray-500 font-normal text-[10px]'>Help guests to find you! </span>
                 </div>
                 <SelectCountry onChange={handleCountrySelect} />
-                <Map center={location ? location.latlng : undefined} height="35"/>
+                <Map center={location ? location.latlng : undefined} height={`35vh`}/>
                 <button className='bg-[#ff385c] py-[10px] text-white rounded-xl hover:shadow-md' onClick={() => props.setStep(Steps.Date)}>NEXT</button>
             </div>
         </div>
