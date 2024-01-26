@@ -1,5 +1,4 @@
 
-'use client';
 
 import Map, { MapProps } from "./Map";
 

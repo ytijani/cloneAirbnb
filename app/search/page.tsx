@@ -4,8 +4,12 @@ import { useStore } from '@/app/src/store';
 import { useEffect, useState } from 'react';
 import Image from "next/image";
 import { FaStar } from 'react-icons/fa';
-import Map from '../components/Map';
+import dynamic from 'next/dynamic';
 
+
+const Map = dynamic(() => import ('../components/Map'), {
+    ssr : false
+});
 
 const SearchResult =  () => {
 
@@ -19,7 +23,7 @@ const SearchResult =  () => {
         setFilterData(userData.filter((item: any) => (
             item.Country ? item.Country === myCountry : item.country === myCountry
         )));
-    }, [myCountry])
+    }, [myCountry, userData])
     return (
         <div className='grid grid-cols-2 container gap-[1em] mt-[1em]'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-[1.2em] overflow-auto h-[80vh] hide'>

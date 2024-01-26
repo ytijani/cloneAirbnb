@@ -3,11 +3,14 @@ import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
+import { LicenseInfo } from '@mui/x-license-pro';
 import Popper from "../help/Popper";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from 'react';
 
+
+LicenseInfo.setLicenseKey('testlolo');
 
 const Buy = ({ adults, children, infants, pets, setAdults, setChildren, setInfants, setPets, price }: any) => {
 

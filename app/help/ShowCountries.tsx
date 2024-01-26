@@ -1,10 +1,15 @@
 'use client'
 
 import SelectCountry, { CountrySelectValue } from '../components/SelectCountry';
-import Map from '../components/Map';
 import { useState } from 'react';
+import dynamic from "next/dynamic"
 import { useStore } from '../src/store';
 import { Steps } from '../components/SearchBar';
+
+const Map = dynamic(() => import ('../components/Map'), {
+    ssr : false
+});
+
 
 const ShowCountries = (props: any) => {
 
