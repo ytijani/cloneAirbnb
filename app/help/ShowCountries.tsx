@@ -19,7 +19,7 @@ const ShowCountries = (props: any) => {
         useStore.setState({country : selectedCountry.label, location : selectedCountry.latlng})
     };
     return (
-        <div className='h-[83dvh]'>
+        <div className='h-[90%] rounded-full'>
             <button onClick={props.close} className=' bg-[#ff385c] rounded-full w-[20px] h-[20px] text-[15px] text-white flex justify-center items-center '>
                 <span>&times;</span>
             </button>
