@@ -19,4 +19,4 @@ This repository contains a clone of the Airbnb website built using Next.js
 
 # Deployment
 
-- [Link](https://myairbnclone.vercel.app/)
+- [Link](https://myairbn.vercel.app/)
