@@ -6,11 +6,11 @@ import { FaStar } from "react-icons/fa";
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Buy from "../help/Buy";
 
 
-const Details = () => {
+const Detail = () => {
 
     const [adults, setAdults] = useState(0);
     const [children, setChildren] = useState(0);
@@ -22,7 +22,6 @@ const Details = () => {
     const picture = searchParams.get('picture');
     const country = searchParams.get("country");
     const location = searchParams.get('location');
-    const distance = searchParams.get('distance');
     const price = searchParams.get("price")
 
 
@@ -69,7 +68,13 @@ const Details = () => {
 }
 
 
-
+const Details = () => {
+    return (
+        <Suspense>
+            <Detail />
+        </Suspense>
+    )
+}
 
 
 export default Details;

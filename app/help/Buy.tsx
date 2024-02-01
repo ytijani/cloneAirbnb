@@ -45,8 +45,8 @@ const Buy = ({ adults, children, infants, pets, setAdults, setChildren, setInfan
                 <button className="w-[100%] bg-[#e41c5a] text-white col-span-2 mt-[1em] h-[2.9em] rounded-xl font-semibold hover:shadow-md">Reserve</button>
                 <p className="text-[10px] text-center font-semibold mt-[10px] mt-[1em]">You won&#39;t be charged yet</p>
                 <div className="border-b-[1px] border-[#aaa] mt-[3em] font-semibold pb-[1.5em]">
-                    <p className="mb-[1em] flex justify-between items-center"><p>Total Guests :</p> {adults + children + infants + pets}</p>
-                    <p className="flex justify-between items-center"> <p>Total : </p>{adults + children + infants + pets + 62}$</p>
+                    <p className="mb-[1em] flex justify-between items-center">Total Guests :{adults + children + infants + pets}</p>
+                    <p className="flex justify-between items-center"> Total : {adults + children + infants + pets + 62}$</p>
                 </div>
                 <div className="flex justify-between items-center mt-[2em] font-bold">
                     <p className="">Total before taxes : </p>
